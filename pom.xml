@@ -21,9 +21,9 @@
   <distributionManagement>
         <!-- use the following if you're not using a snapshot version. -->
         <repository>
-            <id>central</id>
-      <name>Central Repository</name>
-      <url>https://repo.maven.apache.org/maven2</url>
+            <id>com/Nagarro/gunikajain</id>
+      <name>gunika</name>
+      <url>http://localhost:8081/artifactory/webapp/#/artifacts/browse/tree/Properties/gunika/com/Nagarro/gunikajain/</url>
             </repository>
     </distributionManagement>
 </project>
