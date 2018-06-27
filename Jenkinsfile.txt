@@ -22,7 +22,7 @@ pipeline{
 
 			steps {
 				withMaven(maven : 'Maven'){
-					copy c:\test\pipeline-example\target\helloworld.war E:\apache-tomcat-9.0.0.M21-windows-x64\apache-tomcat-9.0.0.M21\webapps\
+					copy c:\test\pipeline-example\target\helloworld.war E:\apache-tomcat-9.0.0.M21-windows-x64\apache-						tomcat-9.0.0.M21\webapps\
 					e:
 					cd E:\apache-tomcat-9.0.0.M21-windows-x64\apache-tomcat-9.0.0.M21\bin
 					startup.bat
