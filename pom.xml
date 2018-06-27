@@ -21,9 +21,8 @@
   <distributionManagement>
         <!-- use the following if you're not using a snapshot version. -->
         <repository>
-            <id>com.Nagarro.gunikajain.devops</id>
-            <name>helloDevops</name>
-            <url>http://localhost:8081/artifactory/webapp/#/artifacts/browse/tree/General/gunika/</url>
-        </repository>
+            <id>central</id>
+      <name>Central Repository</name>
+      <url>https://repo.maven.apache.org/maven2</url>
     </distributionManagement>
 </project>
