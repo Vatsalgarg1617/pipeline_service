@@ -18,12 +18,11 @@
   <build>
     <finalName>helloworld</finalName>
   </build>
-  <distributionManagement>
-        <!-- use the following if you're not using a snapshot version. -->
+<repositories>
         <repository>
             <id>com/Nagarro/gunikajain</id>
       <name>gunika</name>
       <url>http://localhost:8081/artifactory/webapp/#/artifacts/browse/tree/Properties/gunika/com/Nagarro/gunikajain/</url>
             </repository>
-    </distributionManagement>
+  </repositories>
 </project>
