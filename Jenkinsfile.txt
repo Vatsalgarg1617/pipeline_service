@@ -22,7 +22,7 @@ pipeline{
 
 			steps {
 				withMaven(maven : 'Maven'){
-					bat 'mvn deploy'
+					bat 'mvn build'
 				}
 			}
 		}
