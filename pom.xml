@@ -18,4 +18,12 @@
   <build>
     <finalName>helloworld</finalName>
   </build>
+  <distributionManagement>
+        <!-- use the following if you're not using a snapshot version. -->
+        <repository>
+            <id>com.Nagarro.gunikajain.devops</id>
+            <name>helloDevops</name>
+            <url>http://localhost:8081/artifactory/webapp/#/artifacts/browse/tree/General/gunika/</url>
+        </repository>
+    </distributionManagement>
 </project>
