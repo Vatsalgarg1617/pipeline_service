@@ -5,16 +5,16 @@ pipeline{
 		stage ('Compile Stage'){
 
 			steps {
-				withMaven(maven : 'Maven'){
-					bat 'mvn clean compile'
+				withMaven(maven : 'default'){
+					sh 'mvn clean compile'
 				}
 			}
 		}
 		stage ('Testing Stage'){
 
 			steps {
-				withMaven(maven : 'Maven'){
-					bat 'mvn test'
+				withMaven(maven : 'default'){
+					sh 'mvn test'
 				}
 			}
 		}
@@ -23,7 +23,7 @@ pipeline{
 			steps{
 			
 				withSonarQubeEnv('sonarqube') {
-				bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
+				sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
 
 				}
 			}
@@ -31,8 +31,8 @@ pipeline{
 		stage ('Install Stage'){
 
 			steps {
-				withMaven(maven : 'Maven'){
-				bat 'mvn install'
+				withMaven(maven : 'default'){
+				sh 'mvn install'
 				}
 			}
 		}
@@ -40,11 +40,11 @@ pipeline{
 		
 			steps{
 				script {
-					def server = Artifactory.server('ART')
+					def server = Artifactory.server('default')
 					def rtMaven = Artifactory.newMavenBuild()
 					rtMaven.resolver server: server, releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot'
 					rtMaven.deployer server: server, releaseRepo: 'gunika', snapshotRepo: 'gunika'
-					rtMaven.tool = 'Maven'
+					rtMaven.tool = 'default'
 					def buildInfo = rtMaven.run pom: 'pom.xml', goals: 'install'
 					server.publishBuildInfo buildInfo
 					}
